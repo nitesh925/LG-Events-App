@@ -41,7 +41,7 @@ const Navbar = () => {
             <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
             <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>Events</Link></li>
             <li><Link to="/profile" onClick={() => setIsMobileMenuOpen(false)}>Profile</Link></li>
-            <li><Link to="/matches" onClick={() => setIsMobileMenuOpen(false)}>Matches</Link></li>
+            {/*<li><Link to="/matches" onClick={() => setIsMobileMenuOpen(false)}>Matches</Link></li>*/}
             <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
 
             {currentUser ? (
@@ -50,8 +50,8 @@ const Navbar = () => {
               </li>
             ) : (
               <>
-                <li><Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>Login</Link></li>
-                <li><Link to="/register" onClick={() => setIsMobileMenuOpen(false)}>Register</Link></li>
+                {/*<li><Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>Login</Link></li>
+                <li><Link to="/register" onClick={() => setIsMobileMenuOpen(false)}>Register</Link></li>*/}
               </>
             )}
           </ul>

@@ -10,7 +10,7 @@ const Profile = () => {
     return (
         <div className="profile-container">
             
-                <h2>Please log in to select your skills and interests.</h2>
+                <h2>Please log in to see more images.</h2>
             
         </div>
     );

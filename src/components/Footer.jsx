@@ -13,17 +13,17 @@ const Footer = () => {
         <h4>Follow Us</h4>
         <ul className="social-links">
           <li>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/srilaxmiganapatievents" target="_blank" rel="noopener noreferrer">
               <FaInstagram className="social-icon" /> Instagram
             </a>
           </li>
           <li>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://facebook.com/srilaxmiganapatievents" target="_blank" rel="noopener noreferrer">
               <FaFacebookF className="social-icon" /> Facebook
             </a>
           </li>
           <li>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/srilaxmiganapatievents" target="_blank" rel="noopener noreferrer">
               <FaTwitter className="social-icon" /> Twitter
             </a>
           </li>

@@ -10,7 +10,7 @@ const firebaseConfig = {
   storageBucket: "lgevents.firebasestorage.app",
   messagingSenderId: "970191213609",
   appId: "1:970191213609:web:17baadafe92d9870653838",
-  measurementId: "G-R8WL75QEJE",
+  measurementId: "G-R8WL75QEJE"
 };
 
 // Initialize Firebase
