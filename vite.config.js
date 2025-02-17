@@ -6,6 +6,11 @@ export default defineConfig({
   base: "./", 
   plugins: [react()],
   optimizeDeps: {
-    include: ['react-router-dom'],
+    include: ['react-router-dom', 'firebase/auth'], // Combine both dependencies here
   },
+  build: {
+    rollupOptions: {
+      external: ['firebase/auth'],
+    }
+  }
 })
