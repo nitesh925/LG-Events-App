@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { db } from '../firebaseConfig'; // Import Firebase config
+import { db } from '../firebase/firebaseConfig'; // Import Firebase config
 import { collection, addDoc } from 'firebase/firestore';
 import emailjs from 'emailjs-com'; // Import EmailJS
 import '../styles/Contact.css'; // Import CSS

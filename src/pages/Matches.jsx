@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../authContext'; // Adjust the path as needed
-import { db } from '../firebaseConfig'; // Import your Firebase configuration
+import { db } from '../firebase/firebaseConfig'; // Import your Firebase configuration
 import { collection, getDocs } from 'firebase/firestore'; // Import necessary Firestore methods
 import "../styles/Match.css"; // Import your CSS file for styling
 

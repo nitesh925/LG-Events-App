@@ -1,7 +1,7 @@
 // src/authContext.jsx
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { auth } from './firebaseConfig'; // Import Firebase auth
+import { auth } from './firebase/firebaseConfig.js'; // Import Firebase auth
 import { onAuthStateChanged, signOut } from 'firebase/auth'; // Import signOut
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
