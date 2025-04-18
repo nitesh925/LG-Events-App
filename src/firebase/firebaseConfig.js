@@ -4,13 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBJ2oFH09X4ucey0zKiPXjHFwL88XC9wV0',
-  authDomain: 'lgevents.firebaseapp.com',
-  projectId: 'lgevents',
-  storageBucket: 'lgevents.firebasestorage.app',
-  messagingSenderId: '970191213609',
-  appId: '1:970191213609:web:17baadafe92d9870653838',
-  measurementId: 'G-R8WL75QEJE',
+  apiKey: "AIzaSyBJ2oFH09X4ucey0zKiPXjHFwL88XC9wV0",
+  authDomain: "lgevents.firebaseapp.com",
+  projectId: "lgevents",
+  storageBucket: "lgevents.firebasestorage.app",
+  messagingSenderId: "970191213609",
+  appId: "1:970191213609:web:17baadafe92d9870653838",
+  measurementId: "G-R8WL75QEJE"
 };
 
 const app = initializeApp(firebaseConfig);
