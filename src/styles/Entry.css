@@ -8,6 +8,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20%;
+    
+    
+    background-color: #000000;
     margin-bottom: 0.5rem; /* Reduced the margin */
 }
 
