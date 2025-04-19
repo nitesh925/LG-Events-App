@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Home.css'; // Ensure you have the CSS file
-
+import { Link } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 const skills = [
   { id: 'engagement', name: 'Engagement', image: '/images/wedding.png' },
   { id: 'marriage', name: 'Wedding', image: '/images/marriage.png' },
@@ -20,17 +21,16 @@ const skills = [
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredSkills, setFilteredSkills] = useState([]);
-
   
-
+ 
   const renderCards = () => {
     const skillsToRender = searchQuery ? filteredSkills : skills;
-
+  
     return skillsToRender.map((skill) => (
-      <div key={skill.id} className="card">
+      <Link to={`/services/${skill.id}`} key={skill.id} className="card">
         <img src={skill.image} alt={skill.name} className="card-image" />
         <h3>{skill.name}</h3>
-      </div>
+      </Link>
     ));
   };
 
@@ -89,6 +89,9 @@ const Home = () => {
           <p>Celebrate the joy of your Haldi ceremony with us! Book your date in advance for a vibrant, hassle-free event filled with colors, laughter, and traditions. 💛🎊</p>
         </div>
       </div>
+
+
+
     </>
   );
 };

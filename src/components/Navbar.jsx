@@ -38,7 +38,7 @@ const Navbar = () => {
 
           {/* Navbar Links */}
           <ul className={`navbar-links ${isMobileMenuOpen ? "active" : ""}`}>
-            <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
+            <li><Link to="/home" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
             <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>Events</Link></li>
             <li><Link to="/profile" onClick={() => setIsMobileMenuOpen(false)}>Profile</Link></li>
             {/*<li><Link to="/matches" onClick={() => setIsMobileMenuOpen(false)}>Matches</Link></li>*/}
