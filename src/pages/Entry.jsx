@@ -19,6 +19,21 @@ const steps = [
     description: "Pay a minimum amount & lock the date.",
   },
 ];
+const skills = [
+  { id: 'engagement', name: 'Engagement', image: '/images/wedding.png' },
+  { id: 'marriage', name: 'Wedding', image: '/images/marriage.png' },
+  { id: 'birthday', name: 'Birthday', image: '/images/birthday.png' },
+  { id: 'photography', name: 'Photography', image: '/images/photography.png' },
+  { id: 'car', name: 'Rentals', image: '/images/car.png' },
+  { id: 'catering', name: 'Catering', image: '/images/catering.png' },
+  { id: 'events', name: 'Corporate', image: '/images/events.png' },
+  { id: 'lights', name: 'Lighting', image: '/images/lights.png' },
+  { id: 'branding', name: 'Branding', image: '/images/branding.png' },
+  { id: 'stage', name: 'Decoration', image: '/images/stage.png' },
+  { id: 'house', name: 'Inauguration', image: '/images/house.png' },
+  { id: 'flower', name: 'Florals', image: '/images/flower.png' },
+  { id: 'proposal', name: 'Proposal', image: '/images/proposal.png' },
+];
 
 const Entry = () => {
   return (
@@ -101,6 +116,30 @@ const Entry = () => {
     );
   })}
 </div>
+
+      </div>
+
+
+      <div className='thirdhalf'>
+      
+<div className="running-commentary-loop">
+  <div className="scroll-track">
+    <div className="scroll-content">
+      {skills.map(skill => (
+        <span key={skill.id} className="skill-items">
+          {skill.name} &nbsp; | &nbsp;
+        </span>
+      ))}
+      {skills.map(skill => (
+        <span key={`${skill.id}-repeat`} className="skill-items">
+          {skill.name} &nbsp; | &nbsp;
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
+
+
 
       </div>
     </>
