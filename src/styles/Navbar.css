@@ -47,7 +47,7 @@
   }
 }
 
-
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 .navbar-container {
   width: 100%;
   display: flex;
@@ -62,7 +62,8 @@
   font-size: 24px; /* Adjust title size */
   font-weight: bold;
   color: #ffffff;
-  font-family: Caveat, cursive !important;
+  font-family: 'Great Vibes', cursive; /* Elegant cursive font */
+  
 }
 
 .logo-img {
