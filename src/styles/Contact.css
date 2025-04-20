@@ -5,14 +5,14 @@
     align-items: center;
     height: auto;
     padding: 10px;
-    background: white;
+    background: linear-gradient(to bottom, white, rgb(255, 255, 190));
     
 }
 
 /* Contact Container */
 .contact-container {
     display: flex;
-    background: rgb(255, 255, 255);
+    background: linear-gradient(to bottom, white, rgb(255, 255, 190));
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 1000px;
@@ -127,7 +127,7 @@
     .contact-info {
         font-size: 12px; /* Adjusted for better readability */
         padding: 10px; /* Add padding for better spacing */
-        background-color: #ffffff;
+        background: linear-gradient(to bottom, rgb(255, 255, 190));
         display: flex;
         flex-direction: column; /* Stack the elements vertically */
         align-items: center; /* Center the items horizontally */

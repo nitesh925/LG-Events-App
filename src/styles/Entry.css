@@ -8,10 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 27%;
     
-    
-    background-color: #000000;
     margin-bottom: 0.5rem; /* Reduced the margin */
 }
 
@@ -114,7 +111,7 @@
 
 .secondhalf{
     background: linear-gradient(to bottom, white, rgb(255, 255, 190));
-    height: 100vh;
+   
 }
 .secondhalf h2{
     margin-top: 20%;
@@ -127,10 +124,20 @@
 .secondhalf p{
     margin-top: 0;
     font-size: x-small;
-    display: flex;
-    justify-content: center;
+    
     font-weight: 100;
 }
+/* Fix the unwanted global flex-centering */
+.secondhalf > p {
+    text-align: center;
+  }
+  
+  /* Force step-card descriptions to align left */
+  .step-card p {
+    text-align: left !important;
+    margin: 0;
+  }
+  
 .secondhalf img {
     display: flex;
   align-items: center;
@@ -141,6 +148,91 @@
   font-family: Caveat, cursive !important;
   height: 13rem;
 }
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    padding: 0 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .step-card {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+    background: none;
+  }
+  .step-card {
+  text-align: left;
+  
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff; /* bright red or change as needed */
+  
+}
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+  }
+  
+  .step-number {
+    background-color:#330000;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .step-title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+.step-card p {
+  text-align: left !important;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+  
+.scroll-indicator {
+  text-align: center;
+  margin-top: 2rem;
+  color: #888;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(10px); }
+}
+
+  .step-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .step-card p {
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  
 
 .video-text-overlay {
     position: absolute;
