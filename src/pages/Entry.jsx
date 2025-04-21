@@ -138,7 +138,7 @@ const Entry = () => {
     </div>
   </div>
 </div>
-
+      <h1>hi, this is 3rd section...</h1>
 
 
       </div>
