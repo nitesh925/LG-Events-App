@@ -3,7 +3,7 @@
 
 body{
     background-color: white;
-    
+    padding-top: 15%;
 }
 .home-container {
     display: flex;
@@ -13,7 +13,7 @@ body{
     margin: 3%;
     padding: 3%;
     border-radius: 15px;
-    background-color: #D09683;
+    background-color:#ffd6cc;
     text-align: center;
 }
 /* Main container for the Home page */

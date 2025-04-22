@@ -1,19 +1,23 @@
 /* Navbar Styling */
 /* Navbar Styling */
 .navbar {
-  background-color:#330000;
+  position: fixed;
+  top: 10px; /* slight gap from top */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #330000;
   padding: 10px 20px;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-radius: 50px; /* Oval curve */
-  margin: 10px auto; /* Centering the navbar */
-  width: 95%; /* Slightly narrower for curved effect */
-  max-width: 1000px; /* Limiting width for better aesthetics */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-  
+  justify-content: center; /* center content inside */
+  border-radius: 50px;
+  width: 95%;
+  max-width: 1000px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
+
 
 /* Mobile Responsive */
 /* Mobile Responsive */
