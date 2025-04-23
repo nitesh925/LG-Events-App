@@ -35,7 +35,7 @@ body{
 .home-heading {
     font-weight: 700;
     color:#690000;
-    margin-bottom: 10px;
+    margin-bottom: 00px;
     font-family: 'Arial', sans-serif;
 }
 .home-heading2 {
@@ -130,10 +130,10 @@ body{
 
 /* Home section for descriptions */
 .home-section {
-    margin: 20px 0;
-    padding: 20px;
+    
+    
     background-color: #A7BEAE;
-    border-radius: 10px;
+    border-radius: 0px;
     color:#333;
     max-width: 800px;
 }
@@ -164,22 +164,25 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
-}
-
-.home-video {
-    width: 80%;
-    max-width: 1000px;
-    border-radius: 10px;
-}
-
-/* Responsive for mobile */
-@media (max-width: 768px) {
+    
+    box-sizing: border-box;
+  }
+  
+  .home-video {
+    width: 100%;
+    max-width: 1600px; /* You can adjust this max-width as needed */
+    border-radius: 0px;
+    aspect-ratio: 16 / 9; /* Maintains aspect ratio */
+    object-fit: cover;
+  }
+  
+  /* Optional: Remove extra width on small screens */
+  @media (max-width: 768px) {
     .home-video {
-        width: 95%;
+      width: 100%;
     }
-}
-.hero-text {
+  }
+  .hero-text {
     display: block;
     color: #333333;
     font-size: 24px;

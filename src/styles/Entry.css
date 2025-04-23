@@ -1,11 +1,11 @@
 .firsthalf{
   max-width: 100%;
   height: auto;
-    padding-bottom: 10%;
+    
     background: linear-gradient(to bottom, white, #ffd6cc);
 }
 .video-container {
-  padding-top: 5.5%;
+  
   width: 100%;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@
 /* Mobile view only: Apply padding-top */
 @media (max-width: 768px) {
   .video-container {
-    padding-top: 15%;
+    
   }
 }
 
@@ -113,8 +113,8 @@
     display: flex;
     justify-content: space-around; /* Distributes space evenly between items */
     align-items: center;
-    background: radial-gradient(circle, #ffa600,#ecc901); /* Gold to Beige inwards */
-  color: white; 
+    background: radial-gradient(circle, #ffd6cc,#ffd6cc); /* Gold to Beige inwards */
+  color: rgb(0, 0, 0); 
   font-weight: lighter;
   padding: 10px;
 }
@@ -173,7 +173,7 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
   }
   
   .step-card {
@@ -280,7 +280,7 @@
   width: 100%;
   overflow: hidden;
   
-  padding: 10px 0;
+  
  
 }
 

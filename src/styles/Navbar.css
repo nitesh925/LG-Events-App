@@ -1,52 +1,75 @@
 /* Navbar Styling */
 .navbar {
-  position: fixed;
-  top: 10px; /* slight gap from top */
-  left: 50%;
-  transform: translateX(-50%);
   background-color: #330000;
-  padding: 10px 20px;
+  padding: 12px 24px;
   color: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: center; /* center content inside */
-  border-radius: 50px;
-  width: 95%;
-  max-width: 1000px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  justify-content: space-between;
+  border-radius: 0;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Caveat', cursive;
+}
 
-/* Mobile Responsive */
+.logo-img {
+  height: 2.5em;
+  margin-right: 8px;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s;
+  border-radius: 8px;
+}
+
+.navbar-links a:hover {
+  background-color: #73605B;
+}
+
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
   .navbar {
-    width: 90%; /* Slightly wider for mobile */
-    padding: 5px 10px; /* Decreased padding for less height */
-    height: 50px; /* Explicitly setting a smaller height */
-    
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
 
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px; /* Adjust title size */
-    font-weight: bold;
-    color: #ffffff;
-    font-family: Caveat, cursive !important;
-  }
-  
-  .logo-img {
-    height: 2em; /* Reduce logo size */
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .navbar-links a {
-    padding: 8px; /* Reduce padding */
+    width: 100%;
+    text-align: left;
   }
 
-  .menu-icon {
-    font-size: 20px; /* Adjust icon size */
+  .navbar-logo {
+    font-size: 30px;
+  }
+
+  .logo-img {
+    height: 2em;
   }
 }
 
@@ -62,7 +85,7 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  font-size: 24px; /* Adjust title size */
+  font-size: 30px; /* Adjust title size */
   font-weight: bold;
   color: #ffffff;
   font-family: 'Great Vibes', cursive; /* Elegant cursive font */

@@ -161,9 +161,6 @@ const Entry = () => {
             );
           })}
         </div>
-      </div>
-
-      <div className='thirdhalf'>
         <div className="running-commentary-loop">
           <div className="scroll-track">
             <div className="scroll-content">
@@ -177,6 +174,10 @@ const Entry = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className='thirdhalf'>
+        
 
         <div className="wedding-plan-section">
   <h2 className="plan-heading">Sample Wedding Plans</h2>
