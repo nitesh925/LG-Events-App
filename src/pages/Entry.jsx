@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../styles/Entry.css';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
 const steps = [
   {
     title: "Share your requirements",
@@ -19,6 +20,7 @@ const steps = [
     description: "Pay a minimum amount & lock the date.",
   },
 ];
+
 const skills = [
   { id: 'engagement', name: 'Engagement', image: '/images/wedding.png' },
   { id: 'marriage', name: 'Wedding', image: '/images/marriage.png' },
@@ -35,7 +37,59 @@ const skills = [
   { id: 'proposal', name: 'Proposal', image: '/images/proposal.png' },
 ];
 
+const weddingPlans = [
+  {
+    title: "Elegant Bliss",
+    budget: "₹1.5 Lakhs",
+    chart: "/requiredImages/engagement-imgs/engagement3.jpg",
+    description: "Perfect for intimate weddings. Includes venue, basic decor & photography.",
+    requirements: ["50 Guests", "Indoor Venue", "Veg Menu"]
+  },
+  {
+    title: "Royal Grandeur",
+    budget: "₹5 Lakhs",
+    chart: "/requiredImages/engagement-imgs/engagement5.jpg",
+    description: "Ideal for large celebrations with themed decor and premium catering.",
+    requirements: ["200 Guests", "Outdoor Venue", "Multi-cuisine Menu"]
+  },
+  {
+    title: "Minimal Chic",
+    budget: "₹80,000",
+    chart: "/requiredImages/engagement-imgs/engagement1.jpg",
+    description: "A budget-friendly plan for a simple and classy wedding event.",
+    requirements: ["30 Guests", "Home/Apartment", "Custom Decoration"]
+  },
+  {
+    title: "Classic Romance",
+    budget: "₹2.5 Lakhs",
+    chart: "/requiredImages/engagement-imgs/engagement6.jpg",
+    description: "A timeless package with classic decor, floral arrangements, and traditional photography.",
+    requirements: ["100 Guests", "Church/Outdoor Venue", "Veg & Non-Veg Menu"]
+  },
+  {
+    title: "Luxury Dream",
+    budget: "₹10 Lakhs",
+    chart: "/requiredImages/engagement-imgs/engagement2.jpg",
+    description: "For those looking for an extravagant celebration with luxury décor, high-end catering, and live entertainment.",
+    requirements: ["500+ Guests", "Grand Venue", "Customized Multi-cuisine Menu"]
+  }
+];
+
 const Entry = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? weddingPlans.length - 1 : prevIndex - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === weddingPlans.length - 1 ? 0 : prevIndex + 1));
+  };
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/booking'); // replace '/booking' with your desired route
+  };
   return (
     <>
       <div className='firsthalf'>
@@ -67,7 +121,9 @@ const Entry = () => {
             <KeyboardDoubleArrowDownIcon fontSize="large" />
           </div>
           <br />
-          <button className="book-btn">Book Your Event Now</button>
+          <button className="book-btn" onClick={handleClick}>
+          Book Your Event Now
+        </button>
         </div>
       </div>
 
@@ -84,164 +140,117 @@ const Entry = () => {
         <p>Easy to plan your event</p>
         <img src="/images/secondimg.png" className='img' alt="steps-img" />
 
-        {/* 👇 Add Steps with Animation 
-        <div className="scroll-indicator">
-  <p>Scroll down</p>
-  <KeyboardDoubleArrowDownIcon fontSize="large" />
-</div>*/}
-
-<div className="steps-container">
-  {steps.map((step, index) => {
-    const [ref, inView] = useInView({
-      threshold: 0.2,
-      triggerOnce: false,
-    });
-
-    return (
-      <motion.div
-        key={index}
-        ref={ref}
-        className="step-card"
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="step-header">
-  <div className="step-number">{index + 1}</div>
-  <h3 className="step-title">{step.title}</h3>
-</div>
-<p className='step-description'>{step.description}</p>
-
-      </motion.div>
-    );
-  })}
-</div>
-
+        <div className="steps-container">
+          {steps.map((step, index) => {
+            const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: false });
+            return (
+              <motion.div
+                key={index}
+                ref={ref}
+                className="step-card"
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="step-header">
+                  <div className="step-number">{index + 1}</div>
+                  <h3 className="step-title">{step.title}</h3>
+                </div>
+                <p className='step-description'>{step.description}</p>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
-
 
       <div className='thirdhalf'>
-      
-      <div className="running-commentary-loop">
-  <div className="scroll-track">
-    <div className="scroll-content">
-      {skills.concat(skills).map((skill, index) => {
-        const name = skill.name;
-        const first = name.charAt(0);
-        const rest = name.slice(1);
+        <div className="running-commentary-loop">
+          <div className="scroll-track">
+            <div className="scroll-content">
+              {skills.concat(skills).map((skill, index) => (
+                <span key={`${skill.id}-${index}`} className="skill-items">
+                  <span className="first-letter">{skill.name.charAt(0)}</span>
+                  <span className="rest-letters">{skill.name.slice(1)}</span>
+                  &nbsp;&nbsp;
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
 
-        return (
-          <span key={`${skill.id}-${index}`} className="skill-items">
-            <span className="first-letter">{first}</span>
-            <span className="rest-letters">{rest}</span>
-            &nbsp;      &nbsp;
-          </span>
-        );
-      })}
-    </div>
-  </div>
-</div>
-<div className="wedding-plan-section">
+        <div className="wedding-plan-section">
   <h2 className="plan-heading">Sample Wedding Plans</h2>
+  
   <div className="wedding-carousel">
-    {[
-      {
-        title: "Elegant Bliss",
-        budget: "₹1.5 Lakhs",
-        chart: "/requiredImages/engagement-imgs/engagement3.jpg",
-        description: "Perfect for intimate weddings. Includes venue, basic decor & photography.",
-        requirements: ["50 Guests", "Indoor Venue", "Veg Menu"]
-      },
-      {
-        title: "Royal Grandeur",
-        budget: "₹5 Lakhs",
-        chart: "/requiredImages/engagement-imgs/engagement5.jpg",
-        description: "Ideal for large celebrations with themed decor and premium catering.",
-        requirements: ["200 Guests", "Outdoor Venue", "Multi-cuisine Menu"]
-      },
-      {
-        title: "Minimal Chic",
-        budget: "₹80,000",
-        chart: "/requiredImages/engagement-imgs/engagement1.jpg",
-        description: "A budget-friendly plan for a simple and classy wedding event.",
-        requirements: ["30 Guests", "Home/Apartment", "Custom Decoration"]
-      },
-      {
-        title: "Classic Romance",
-        budget: "₹2.5 Lakhs",
-        chart: "/requiredImages/engagement-imgs/engagement6.jpg",
-        description: "A timeless package with classic decor, floral arrangements, and traditional photography.",
-        requirements: ["100 Guests", "Church/Outdoor Venue", "Veg & Non-Veg Menu"]
-      },
-      {
-        title: "Luxury Dream",
-        budget: "₹10 Lakhs",
-        chart: "/requiredImages/engagement-imgs/engagement2.jpg",
-        description: "For those looking for an extravagant celebration with luxury décor, high-end catering, and live entertainment.",
-        requirements: ["500+ Guests", "Grand Venue", "Customized Multi-cuisine Menu"],
-      }
-    ].map((plan, index) => (
-      <div className="wedding-card" key={index}>
-        <h3>{plan.title}</h3>
-        <img src={plan.chart} alt={`${plan.title} chart`} />
-        <p className="budget">Budget: {plan.budget}</p>
-        <p>{plan.description}</p>
-        <ul>
-          {plan.requirements.map((req, i) => (
-            <li key={i}>{req}</li>
-          ))}
-        </ul>
-      </div>
+    
+        <ArrowLeftIcon className="carousel-arrow left" fontSize="large" onClick={handlePrev} />
+    
+    <div className="wedding-card">
+      <h3>{weddingPlans[currentIndex].title}</h3>
+      <img src={weddingPlans[currentIndex].chart} alt={`${weddingPlans[currentIndex].title} chart`} />
+      <p className="budget">Budget: {weddingPlans[currentIndex].budget}</p>
+      <p>{weddingPlans[currentIndex].description}</p>
+      <ul>
+        {weddingPlans[currentIndex].requirements.map((req, i) => (
+          <li key={i}>{req}</li>
+        ))}
+      </ul>
+    </div>
+    
+<ArrowRightIcon className="carousel-arrow right" fontSize="large" onClick={handleNext} />
+
+  </div>
+
+  <div className="carousel-indicators">
+    {weddingPlans.map((_, index) => (
+      <span
+        key={index}
+        className={`dot ${index === currentIndex ? "active" : ""}`}
+        onClick={() => setCurrentIndex(index)}
+      ></span>
     ))}
   </div>
 </div>
 
-      
-      <div className='faq-section'>
-  <h2>Frequently Asked Questions</h2>
-  {[
-    {
-      question: "What types of events do you organize?",
-      answer: "We specialize in weddings, birthdays, housewarming ceremonies, corporate events, and more!",
-    },
-    {
-      question: "Do you offer customizable event packages?",
-      answer: "Yes, all our packages are tailored to your preferences, budget, and theme.",
-    },
-    {
-      question: "How far in advance should I book?",
-      answer: "We recommend booking at least 2-3 months in advance to secure your preferred date and services.",
-    },
-    {
-      question: "Can you help with venue selection?",
-      answer: "Absolutely! We help find and book the perfect venue that suits your event size, location, and vibe.",
-    },
-    {
-      question: "Do you provide catering, photography, and decor?",
-      answer: "Yes, we provide end-to-end services including catering, decoration, photography, entertainment, and more.",
-    },
-    {
-      question: "Are there any hidden costs?",
-      answer: "No. We believe in transparency. All costs are clearly mentioned in your custom proposal.",
-    }
-  ].map((faq, index) => (
-    <div key={index} className="faq-item">
-      <details>
-        <summary>{faq.question}</summary>
-        <p>{faq.answer}</p>
-      </details>
-    </div>
-  ))}
-</div>
-
-
-
-
+        <div className='faq-section'>
+          <h2>Frequently Asked Questions</h2>
+          {[
+            {
+              question: "What types of events do you organize?",
+              answer: "We specialize in weddings, birthdays, housewarming ceremonies, corporate events, and more!",
+            },
+            {
+              question: "Do you offer customizable event packages?",
+              answer: "Yes, all our packages are tailored to your preferences, budget, and theme.",
+            },
+            {
+              question: "How far in advance should I book?",
+              answer: "We recommend booking at least 2-3 months in advance to secure your preferred date and services.",
+            },
+            {
+              question: "Can you help with venue selection?",
+              answer: "Absolutely! We help find and book the perfect venue that suits your event size, location, and vibe.",
+            },
+            {
+              question: "Do you provide catering, photography, and decor?",
+              answer: "Yes, we provide end-to-end services including catering, decoration, photography, entertainment, and more.",
+            },
+            {
+              question: "Are there any hidden costs?",
+              answer: "No. We believe in transparency. All costs are clearly mentioned in your custom proposal.",
+            }
+          ].map((faq, index) => (
+            <div key={index} className="faq-item">
+              <details>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            </div>
+          ))}
+        </div>
       </div>
-
-
     </>
-  )
-}
+  );
+};
 
 export default Entry;

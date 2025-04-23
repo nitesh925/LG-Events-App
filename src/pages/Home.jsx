@@ -36,6 +36,7 @@ const Home = () => {
 
   return (
     <>
+    <div className='homepage'>
       <div className="video-container">
         <video autoPlay loop muted playsInline className="home-video">
           <source src="/videos/sampleVideo.mp4" type="video/mp4" />
@@ -90,7 +91,7 @@ const Home = () => {
         </div>
       </div>
 
-
+      </div>
 
     </>
   );

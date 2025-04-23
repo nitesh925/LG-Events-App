@@ -1,7 +1,7 @@
 // firebase.js or firebaseConfig.js
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getAuth, RecaptchaVerifier, PhoneAuthProvider } from 'firebase/auth'; // Added RecaptchaVerifier and PhoneAuthProvider
 
 const firebaseConfig = {
   apiKey: "AIzaSyBJ2oFH09X4ucey0zKiPXjHFwL88XC9wV0",
@@ -17,4 +17,4 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-export { db, auth };
+export { db, auth, RecaptchaVerifier, PhoneAuthProvider }; // Export added functions

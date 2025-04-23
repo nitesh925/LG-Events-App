@@ -3,8 +3,9 @@
 
 body{
     background-color: white;
-    padding-top: 15%;
+    
 }
+
 .home-container {
     display: flex;
     flex-direction: column;
@@ -57,6 +58,7 @@ body{
 
 /* Cards container for skill cards */
 .cards-container {
+    
     display: flex;
     overflow-x: auto; /* Enable horizontal scrolling */
     white-space: nowrap; /* Prevent wrapping */
@@ -81,6 +83,7 @@ body{
 }
 
 .card {
+    
     min-width: 10px; /* Reduce card width */
     height: 140px; /* Reduce card height */
     display: flex;
@@ -251,6 +254,7 @@ body{
 
 /* Container to align image & text */
 .image-text-container {
+    
     display: flex;
     align-items: center; /* Aligns content vertically */
     justify-content: flex-start; /* Ensures image and text stay close */
