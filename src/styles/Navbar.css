@@ -1,0 +1,134 @@
+/* Navbar Styling */
+.navbar {
+  background-color: #330000;
+  padding: 10px 24px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: fixed;      /* ✅ stays at top */
+  top: 0;
+  left: 0;
+  font-size: 1.2rem;
+  z-index: 1000;
+}
+
+/* Push page content below navbar */
+body {
+  margin: 0;
+  padding-top: 70px;   /* ✅ same as navbar height */
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Great Vibes', cursive;
+}
+
+.logo-img {
+  height: 2.5em;
+  width: auto;
+  margin-right: 8px;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.navbar-links a:hover {
+  background-color: #D09683;
+}
+
+/* Mobile Menu */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.9);
+    padding: 10px;
+    text-align: center;
+    z-index: 20;
+    backdrop-filter: blur(3px);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    padding: 5px 0;
+  }
+
+  .navbar-links a {
+    display: block;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .navbar-links a:hover {
+    background-color: #E7E8D1;
+    color: #330000;
+  }
+
+  .navbar-logo {
+    font-size: 26px;
+  }
+
+  .logo-img {
+    height: 2em;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Arial', sans-serif;
+}
